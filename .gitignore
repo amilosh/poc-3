@@ -1,0 +1,29 @@
+# IntelliJ IDEA
+product-service/.idea
+product-service/*.iws
+product-service/*.iml
+product-service/*.ipr
+product-service/out/
+product-service/!**/src/main/**/out/
+product-service/!**/src/test/**/out/
+product-service/bin/
+product-service/!**/src/main/**/bin/
+product-service/!**/src/test/**/bin/
+product-service/build/
+product-service/!**/src/main/**/build/
+product-service/!**/src/test/**/build/
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
