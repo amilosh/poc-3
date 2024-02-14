@@ -12,6 +12,19 @@ product-service/!**/src/test/**/bin/
 product-service/build/
 product-service/!**/src/main/**/build/
 product-service/!**/src/test/**/build/
+order-service/.idea
+order-service/*.iws
+order-service/*.iml
+order-service/*.ipr
+order-service/out/
+order-service/!**/src/main/**/out/
+order-service/!**/src/test/**/out/
+order-service/bin/
+order-service/!**/src/main/**/bin/
+order-service/!**/src/test/**/bin/
+order-service/build/
+order-service/!**/src/main/**/build/
+order-service/!**/src/test/**/build/
 
 # Compiled class file
 *.class
