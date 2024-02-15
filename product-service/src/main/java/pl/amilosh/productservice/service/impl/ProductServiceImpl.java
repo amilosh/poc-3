@@ -3,6 +3,7 @@ package pl.amilosh.productservice.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.amilosh.productservice.dto.ProductDto;
 import pl.amilosh.productservice.mapping.ProductMapper;
 import pl.amilosh.productservice.repository.ProductRepository;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Slf4j
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
@@ -26,6 +28,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ProductDto> getAllProducts() {
         var products = productRepository.findAll();
         return productMapper.toDtos(products);

@@ -2,12 +2,14 @@ package pl.amilosh.orderservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.amilosh.orderservice.dto.OrderDto;
 import pl.amilosh.orderservice.mapping.OrderMapper;
 import pl.amilosh.orderservice.repository.OrderRepository;
 import pl.amilosh.orderservice.service.OrderService;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
