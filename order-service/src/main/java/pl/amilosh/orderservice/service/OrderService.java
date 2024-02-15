@@ -4,5 +4,5 @@ import pl.amilosh.orderservice.dto.OrderDto;
 
 public interface OrderService {
 
-    void createOrder(OrderDto orderDto);
+    OrderDto createOrder(OrderDto orderDto);
 }

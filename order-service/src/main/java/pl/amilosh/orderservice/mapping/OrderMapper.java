@@ -14,4 +14,7 @@ public interface OrderMapper {
     @Mapping(target = "orderNumber", expression = "java( UUID.randomUUID().toString() )")
     @Mapping(target = "orderLineItems", source = "orderDto.orderLineItemDtos")
     Order toEntity(OrderDto orderDto);
+
+    @Mapping(target = "orderLineItemDtos", source = "order.orderLineItems")
+    OrderDto toDto(Order order);
 }

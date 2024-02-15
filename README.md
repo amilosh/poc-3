@@ -43,7 +43,7 @@ docker run -d --name poc-3-mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root -e MYS
 
 ```
 docker exec -it {containerId} bash
-mysql -u root -p root
+mysql -u root -proot
 
 CREATE DATABASE inventory_service;
 ```

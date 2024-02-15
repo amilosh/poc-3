@@ -10,6 +10,7 @@ import pl.amilosh.orderservice.dto.OrderDto;
 import pl.amilosh.orderservice.service.OrderService;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping("/order")
@@ -18,10 +19,9 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping
+    @PostMapping(produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(CREATED)
-    public String createOrder(@RequestBody OrderDto orderDto) {
-        orderService.createOrder(orderDto);
-        return "Order have been created successfully.";
+    public OrderDto createOrder(@RequestBody OrderDto orderDto) {
+        return orderService.createOrder(orderDto);
     }
 }

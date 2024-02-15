@@ -14,4 +14,8 @@ public interface OrderLineItemMapper {
     OrderLineItem toEntity(OrderLineItemDto orderLineItemDto);
 
     List<OrderLineItem> toEntities(List<OrderLineItemDto> orderLineItemDtos);
+
+    OrderLineItemDto toDto(OrderLineItem orderLineItem);
+
+    List<OrderLineItemDto> toDtos(List<OrderLineItem> orderLineItems);
 }
