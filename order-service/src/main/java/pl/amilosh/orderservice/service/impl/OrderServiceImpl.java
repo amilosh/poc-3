@@ -1,6 +1,5 @@
 package pl.amilosh.orderservice.service.impl;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,7 @@ public class OrderServiceImpl implements OrderService {
 
     private final OrderMapper orderMapper;
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
-    private final ObjectMapper objectMapper;
+    private final WebClient.Builder webClientBuilder;
 
     @Override
     public OrderDto createOrder(OrderDto orderDto) {
@@ -40,8 +38,8 @@ public class OrderServiceImpl implements OrderService {
         var orderSkus = order.getOrderLineItems().stream()
             .map(OrderLineItem::getSkuCode).toList();
 
-        var inventories = webClient.get()
-            .uri("http://localhost:8082/api/inventory",
+        var inventories = webClientBuilder.build().get()
+            .uri("http://inventory-service/api/inventory",
                 uriBuilder -> uriBuilder.queryParam("skuCode", orderSkus).build())
             .accept(APPLICATION_JSON)
             .retrieve()
