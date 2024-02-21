@@ -40,3 +40,8 @@ order-service/!**/src/test/**/build/
 *.zip
 *.tar.gz
 *.rar
+/discovery-service/.idea/
+/product-service/.idea/
+/order-service/.idea/
+/inventory-service/.idea/
+/api-gateway/.idea/

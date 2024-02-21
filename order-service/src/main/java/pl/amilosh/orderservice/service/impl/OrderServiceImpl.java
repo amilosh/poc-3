@@ -39,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
             .map(OrderLineItem::getSkuCode).toList();
 
         var inventories = webClientBuilder.build().get()
-            .uri("http://inventory-service/api/inventory",
+            .uri("http://inventory-service/inventory",
                 uriBuilder -> uriBuilder.queryParam("skuCode", orderSkus).build())
             .accept(APPLICATION_JSON)
             .retrieve()

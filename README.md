@@ -8,6 +8,13 @@ Proof of concept project
 - Spring Boot 3.2.2
 - Spring Cloud 2023.0.0 (Eureka)
 
+### Features
+- Spring WebFlux, WebClient
+- Random ports, multi-instances, load balancer
+- Spring Cloud Eureka discovery service
+- Spring Cloud Eureka clients
+- Spring Cloud Api Gateway
+
 # discovery-server
 ### Run
 ```
