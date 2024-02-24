@@ -19,6 +19,7 @@ Proof of concept project
 ### Run
 ```
 http://localhost:8761
+http://localhost:8080/eureka/web
 ```
 
 # product-service
@@ -27,9 +28,10 @@ http://localhost:8761
 ### Run
 ```
 docker pull mongo:7.0.5
-docker run -d --name product-service -p 27017:27017 -e MONGO_INITDB_DATABASE=product-service mongo:7.0.5
+docker run -d --name product-service-mongo-db -p 27017:27017 -e MONGO_INITDB_DATABASE=product-service mongo:7.0.5
 
-http://localhost:8080
+http://localhost:{randomPort}
+http://localhost:8080/product-service/**
 ```
 
 # order-service
@@ -40,7 +42,8 @@ http://localhost:8080
 docker pull mysql:8.3
 docker run -d --name poc-3-mysql -p 3307:3306 -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=order_service mysql:8.3
 
-http://localhost:8081
+http://localhost:{randomPort}
+http://localhost:8080/order-service/**
 ```
 
 # inventory-service
@@ -53,8 +56,11 @@ mysql -u root -proot
 
 CREATE DATABASE inventory_service;
 
-http://localhost:{randomPPort}
+http://localhost:{randomPort}
+http://localhost:8080/inventory-service/**
 ```
+
+# api-gateway
 
 # interactions
 order-service -> inventory-service: WebClient
