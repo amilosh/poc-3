@@ -29,6 +29,7 @@ public class InventoryController {
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     @ResponseStatus(CREATED)
     public String createInventory(@RequestBody InventoryDto inventoryDto) {
+        log.info("Create inventory");
         inventoryService.createInventory(inventoryDto);
         return "Inventory have been created successfully.";
     }

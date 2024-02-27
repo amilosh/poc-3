@@ -61,6 +61,12 @@ http://localhost:8080/inventory-service/**
 ```
 
 # api-gateway
+### Tools
+- Zipkin
+### Run
+```
+docker run --name poc-3-zipkin -d -p 9411:9411 openzipkin/zipkin
+```
 
 # interactions
 order-service -> inventory-service: WebClient

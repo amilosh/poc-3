@@ -29,8 +29,8 @@ public class OrderController {
     @PostMapping(produces = APPLICATION_JSON_VALUE)
     @ResponseStatus(CREATED)
     @CircuitBreaker(name = "inventory", fallbackMethod = "fallbackMethod")
-    @TimeLimiter(name = "inventory")
-    @Retry(name = "inventory")
+//    @TimeLimiter(name = "inventory")
+//    @Retry(name = "inventory")
     public ResponseEntity<Object> createOrder(@RequestBody OrderDto orderDto) {
         var createdOrder = orderService.createOrder(orderDto);
         return new ResponseEntity<>(createdOrder, CREATED);

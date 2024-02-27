@@ -1,6 +1,7 @@
 package pl.amilosh.orderservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import java.util.Arrays;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
+@Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -28,6 +30,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDto createOrder(OrderDto orderDto) {
+        log.info("Create order");
         var order = orderMapper.toEntity(orderDto);
         validateOrder(order);
         var savedOrder = orderRepository.save(order);
